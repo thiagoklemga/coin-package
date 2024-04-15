@@ -1,13 +1,15 @@
 import { cn } from "@/lib/utils";
 
-import { CoinBalance, CoinPackageDialog } from "@/components";
+import { CoinBalance, CoinPackageList } from "@/components";
 
 export default function Home() {
   return (
-    <main className={cn("flex flex-col gap-4 pt-16 items-center h-screen")}>
+    <main
+      className={cn("flex bg-[#090B2A] justify-center gap-12 pt-16 h-screen")}
+    >
       <CoinBalance />
 
-      <CoinPackageDialog />
+      <CoinPackageList />
     </main>
   );
 }

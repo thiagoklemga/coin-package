@@ -10,27 +10,46 @@ import { formatNumber } from "@/formatters/formatNumber";
 export const CoinBalance = () => {
   const { goldCoins, silverCoins } = useUserCoinBalance();
 
-  return (
-    <div className={cn("rounded-full border-2 flex p-1 gap-2")}>
-      <div
+  const [balanceSelected, setBalanceSelected] = React.useState<
+    "gold" | "silver"
+  >("gold");
+
+  const BalanceButton = (props: { type: "gold" | "silver" }) => (
+    <button
+      onClick={() => setBalanceSelected(props.type)}
+      className={cn(
+        "rounded-full flex flex-col items-center gap-1 px-4 py-2 text-white w-40",
+        balanceSelected === props.type && "bg-[#642FE2]"
+      )}
+    >
+      <span
         className={cn(
-          "rounded-full flex items-center gap-2 px-4 py-2 text-slate-300",
-          goldCoins && "text-slate-500"
+          "hidden font-bold",
+          balanceSelected === props.type && "block"
         )}
       >
-        <CircleDollarSign color="gold" />
+        {props.type === "gold" ? "Golden" : "Silver"} coins
+      </span>
+      <div className={cn("flex gap-2")}>
+        <CircleDollarSign color={props.type} />
         {formatNumber(goldCoins)}
       </div>
+    </button>
+  );
+
+  return (
+    <section className={cn("flex flex-col gap-8 items-center")}>
+      <h1 className={cn("text-white font-bold text-2xl")}>Coin Balance</h1>
 
       <div
         className={cn(
-          "rounded-full flex items-center gap-2 px-4 py-2 text-slate-300",
-          silverCoins && "text-slate-500"
+          "rounded-full items-center justify-between border-2 flex p-1 gap-2 border-[#642fe2]"
         )}
       >
-        <CircleDollarSign color="silver" />
-        {formatNumber(silverCoins)}
+        <BalanceButton type="gold" />
+
+        <BalanceButton type="silver" />
       </div>
-    </div>
+    </section>
   );
 };

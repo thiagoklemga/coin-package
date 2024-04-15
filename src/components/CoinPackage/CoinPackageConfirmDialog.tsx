@@ -1,6 +1,5 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { formatNumber } from "@/formatters/formatNumber";
 import { useUserCoinBalance } from "@/zustand/useUserCoinBalance";
 
 import {
@@ -15,7 +14,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { ICoinPackageOptions } from "@/components";
-import { DollarSign } from "lucide-react";
 import { toast } from "../ui/toast/use-toast";
 
 export const CoinPackageConfirmDialog = ({
@@ -36,14 +34,15 @@ export const CoinPackageConfirmDialog = ({
     <AlertDialog>
       <AlertDialogTrigger
         className={cn(
-          "h-8 rounded-full bg-slate-400 text-white font-semibold text-lg px-4 py-2 flex items-center gap-1 "
+          "h-8 rounded-full bg-[#F538B5] text-white font-semibold text-lg px-4 py-2 flex items-center gap-1 "
         )}
       >
-        <DollarSign />
-        {formatNumber(price)}
+        BUY
       </AlertDialogTrigger>
 
-      <AlertDialogContent className={cn("w-[320px]")}>
+      <AlertDialogContent
+        className={cn("w-[320px] border-4 border-[#642FE2] text-[#642FE2]")}
+      >
         <AlertDialogHeader>
           <AlertDialogTitle>Do you confirm the buy?</AlertDialogTitle>
           <AlertDialogDescription>
