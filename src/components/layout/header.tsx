@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { CoinPackage } from "../coin-package";
+
+import { CoinPackageDialog } from "@/components";
 
 export const Header = () => {
   return (
@@ -11,10 +11,12 @@ export const Header = () => {
           "relative flex py-4 border-2 border-b-slate-200 backdrop-blur-md h-16"
         )}
       >
-        <h2 className={cn("absolute left-6 font-bold text-lg")}>Logo</h2>
+        <h2 className={cn("absolute left-6 font-bold text-lg")}>
+          Coin package challenge
+        </h2>
 
         <div className={cn("absolute right-6 flex item-center gap-4")}>
-          <CoinPackage />
+          <CoinPackageDialog />
         </div>
       </div>
     </header>
