@@ -12,25 +12,26 @@ import { CoinPackageOption, ICoinPackageOptions } from "@/components";
 
 export const CoinPackageDialog = () => {
   return (
-    <Dialog open={true}>
+    <Dialog>
       <DialogTrigger
         className={cn(
-          "h-8 rounded-full bg-pink-500 text-white font-semibold text-lg px-4 py-2 flex items-center"
+          "rounded-full bg-slate-400 text-white font-semibold text-lg px-4 py-2 flex items-center"
         )}
       >
-        Buy
+        Buy coins
       </DialogTrigger>
 
       <DialogContent>
-        <DialogHeader className={cn("")}>
+        <DialogHeader>
           <DialogTitle>Select the coin package</DialogTitle>
         </DialogHeader>
 
-        <div className={cn("flex items-center")}>
+        <div className={cn("flex items-center text-slate-500")}>
           <h2 className="w-1/3">Gold Coins</h2>
           <h2 className="w-1/3">Silver Coins</h2>
           <h2 className="w-1/3 text-right">Price</h2>
         </div>
+
         {options.map((option, index) => (
           <CoinPackageOption key={index} {...option} />
         ))}

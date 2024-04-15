@@ -1,4 +1,5 @@
-export * from "./layout/header";
+export * from "./CoinBalance/CoinBalance";
 
-export * from "./CoinPackage/coin-package-dialog";
-export * from "./CoinPackage/coin-package-option";
+export * from "./CoinPackage/CoinPackageDialog";
+export * from "./CoinPackage/CoinPackageOption";
+export * from "./CoinPackage/CoinPackageConfirmDialog";
