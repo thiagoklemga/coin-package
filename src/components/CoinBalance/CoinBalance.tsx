@@ -32,7 +32,7 @@ export const CoinBalance = () => {
       </span>
       <div className={cn("flex gap-2")}>
         <CircleDollarSign color={props.type} />
-        {formatNumber(goldCoins)}
+        {formatNumber(props.type === "gold" ? goldCoins : silverCoins)}
       </div>
     </button>
   );

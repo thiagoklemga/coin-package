@@ -51,7 +51,9 @@ export const CoinPackageConfirmDialog = ({
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction onClick={onBuyCoins}>Continue</AlertDialogAction>
+          <AlertDialogAction onClick={onBuyCoins} className="bg-[#F538B5]">
+            Continue
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
